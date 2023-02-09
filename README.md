@@ -1,38 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+First, run the development server to see the interface:
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Tasks
+Detailed instructions for each task are in the comments of the corresponding file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Task 0: Initialize Firebase
+pages/index.tsx
+- [ ] Create a Firebase project on Firebase Console
+- [ ] Enable Google Sign in
+- [ ] Add Firebase to the project
+- [ ] Initialize Firebase
+> Documentation: https://firebase.google.com/docs/auth/web/start
 
-## Learn More
+### Task 1: Implement Google Sign in with Firebase
+pages/index.tsx
+- [ ] Implement Google Sign in with Google button
+- [ ] Redirect to the Signed In page to show random programming jokes
+> Documentation: https://firebase.google.com/docs/auth/web/google-signin
 
-To learn more about Next.js, take a look at the following resources:
+### Task 2: Fetch programming jokes from the API
+pages/signed-in.tsx
+- [ ] Fetch programming jokes from the API using getServerSideProps
+> Learn more about Nextjs Data Fetching: https://nextjs.org/docs/basic-features/data-fetching
+- [ ] Pass the joke to the page on the client side
+> API URL: https://official-joke-api.appspot.com/jokes/programming/random
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Task 3: Display the programming joke
+pages/signed-in.tsx
+- [ ] Display the programming joke in your own way :)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### (Optional) Task 4: Find a critical design flaw in the website
+No need to send me the problem and fix, just let me know what you find in the interview
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Note
+- Feel free to explore the codebase and make changes to the UI
+- You can use any UI library you want
+- It is completely fine if you cannot complete all the tasks as one of the objectives in this test is to let you know the usual developer experience in CheckMate
+- If you have any questions, please feel free to ask me :) Just drop me an [email](mailto://hermanho@checkmatehk.io)
