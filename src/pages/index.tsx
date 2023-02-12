@@ -52,7 +52,7 @@ export default function Home() {
         console.log(error);
       });
 
-    getRedirectResult(auth)
+    /*getRedirectResult(auth)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access Google APIs.
         if (result != null) {
@@ -62,7 +62,6 @@ export default function Home() {
           const user = result.user;
           // IdP data available using getAdditionalUserInfo(result)
           // ...
-          router.push("/signed-in");
         }
       })
       .catch((error) => {
@@ -74,7 +73,7 @@ export default function Home() {
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
-      });
+      });*/
   };
 
   return (
