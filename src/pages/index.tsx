@@ -44,15 +44,11 @@ export default function Home() {
       3. (Optional) Use getRedirectResult to get the result of the redirect and check out what is inside :)
       4. Redirect the user to the signed-in page using Next.js router
      */
-    signInWithRedirect(auth, provider)
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    signInWithRedirect(auth, provider);
+    router.push('/signed-in');
+ 
 
-    /*getRedirectResult(auth)
+    getRedirectResult(auth)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access Google APIs.
         if (result != null) {
@@ -73,7 +69,7 @@ export default function Home() {
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
-      });*/
+      });
   };
 
   return (
