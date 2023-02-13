@@ -1,17 +1,25 @@
 import {GetServerSideProps, InferGetServerSidePropsType} from "next";
 import { json } from "stream/consumers";
 
+
+
+
 export default function SignedIn({ joke }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const temp = JSON.stringify(joke.data[0].punchline)
   return (
     <div>
       <h1>Signed In</h1>
       {/* Task 3: Your own presentation of the joke here (Free Style 😉 )*/}
-      <h2>joke.data[0].setup</h2>
+      <p id="showans">{joke.data[0].setup}</p>
+      <button onClick={()=> (alert(temp))}>Haha</button>
+
+
+
       
       {/* End of Task 3 */}
     </div>
   )
-s
+
 }
 
 // Task 2: Fetch random jokes from the API
