@@ -54,12 +54,12 @@ export default function Home() {
         const credential = GoogleAuthProvider.credentialFromError(error);
     });*/
 
-    /*auth.onAuthStateChanged(function(user) {
+    auth.onAuthStateChanged(function(user) {
       console.log(user);    //這裡會印出User的資訊
       if (user) {
         router.push('/signed-in');
       }
-    })*/
+    })
     
  
 
