@@ -5,6 +5,7 @@ import {
   GoogleAuthProvider,
   signInWithRedirect,
   getRedirectResult,
+  signInWithPopup,
 } from "firebase/auth";
 import { useRouter } from "next/router";
 import { initializeApp } from "firebase/app";
@@ -44,7 +45,7 @@ export default function Home() {
       3. (Optional) Use getRedirectResult to get the result of the redirect and check out what is inside :)
       4. Redirect the user to the signed-in page using Next.js router
      */
-    signInWithRedirect(auth, provider)
+    signInWithPopup(auth, provider);
     /*.catch((error)=>{
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -53,17 +54,15 @@ export default function Home() {
       // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
     });*/
-    router.push('/signed-in')
+    router.push("/signed-in");
     /*auth.onAuthStateChanged((user)=>{
       console.log(user);    //這裡會印出User的資訊
       if (user) {
         router.push('/signed-in');
       }
     })*/
-    
- 
 
-    getRedirectResult(auth)
+    /*getRedirectResult(auth)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access Google APIs.
         if (result != null) {
@@ -84,9 +83,9 @@ export default function Home() {
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
-      });
+      });*/
 
-      //router.push('/signed-in');
+    //router.push('/signed-in');
   };
 
   return (
