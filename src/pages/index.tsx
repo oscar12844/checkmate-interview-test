@@ -53,13 +53,13 @@ export default function Home() {
       // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
     });*/
-
-    auth.onAuthStateChanged((user)=>{
+    router.push('/signed-in')
+    /*auth.onAuthStateChanged((user)=>{
       console.log(user);    //這裡會印出User的資訊
       if (user) {
         router.push('/signed-in');
       }
-    })
+    })*/
     
  
 
