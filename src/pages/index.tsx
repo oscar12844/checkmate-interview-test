@@ -44,8 +44,23 @@ export default function Home() {
       3. (Optional) Use getRedirectResult to get the result of the redirect and check out what is inside :)
       4. Redirect the user to the signed-in page using Next.js router
      */
-    signInWithRedirect(auth, provider);
-    router.push('/signed-in');
+    signInWithRedirect(auth, provider)
+    /*.catch((error)=>{
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      // The email of the user's account used.
+        const email = error.customData.email;
+      // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+    });*/
+
+    /*auth.onAuthStateChanged(function(user) {
+      console.log(user);    //這裡會印出User的資訊
+      if (user) {
+        router.push('/signed-in');
+      }
+    })*/
+    
  
 
     getRedirectResult(auth)
@@ -70,6 +85,8 @@ export default function Home() {
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
+
+      router.push('/signed-in');
   };
 
   return (

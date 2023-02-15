@@ -12,6 +12,12 @@ export default function SignedIn({ joke }: InferGetServerSidePropsType<typeof ge
       {/* Task 3: Your own presentation of the joke here (Free Style 😉 )*/}
       <p id="showans">{joke.data[0].setup}</p>
       <button onClick={()=> (alert(temp))}>Haha</button>
+      <div>
+        <button type="button" onClick={()=>window.location.reload()}>
+        Next Joke?
+        </button>
+      </div>
+
 
 
 
