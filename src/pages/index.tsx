@@ -5,13 +5,11 @@ import {
   GoogleAuthProvider,
   signInWithRedirect,
   getRedirectResult,
-  onAuthStateChanged,
 } from "firebase/auth";
 import { useRouter } from "next/router";
 import { initializeApp } from "firebase/app";
 import { resourceLimits } from "worker_threads";
 import path from "path";
-import { useState } from "react";
 
 // Task 0: Initialize Firebase
 // Replace the following with your app's Firebase project configuration
@@ -46,7 +44,7 @@ export default function Home() {
       3. (Optional) Use getRedirectResult to get the result of the redirect and check out what is inside :)
       4. Redirect the user to the signed-in page using Next.js router
      */
-    signInWithRedirect(auth, provider);
+    signInWithRedirect(auth, provider)
     /*.catch((error)=>{
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -56,13 +54,14 @@ export default function Home() {
         const credential = GoogleAuthProvider.credentialFromError(error);
     });*/
 
-    /*onAuthStateChanged((user) => {
+    auth.onAuthStateChanged((user)=>{
       console.log(user);    //這裡會印出User的資訊
       if (user) {
         router.push('/signed-in');
       }
-    })*/
-    router.push("/signed-in");
+    })
+    
+ 
 
     getRedirectResult(auth)
       .then((result) => {
@@ -86,6 +85,8 @@ export default function Home() {
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
+
+      //router.push('/signed-in');
   };
 
   return (
