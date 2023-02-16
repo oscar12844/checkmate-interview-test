@@ -45,7 +45,7 @@ export default function Home() {
       3. (Optional) Use getRedirectResult to get the result of the redirect and check out what is inside :)
       4. Redirect the user to the signed-in page using Next.js router
      */
-    signInWithPopup(auth, provider);
+    signInWithRedirect(auth, provider);
     /*.catch((error)=>{
         const errorCode = error.code;
         const errorMessage = error.message;
