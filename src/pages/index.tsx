@@ -10,7 +10,8 @@ import {
 import { useRouter } from "next/router";
 import { initializeApp } from "firebase/app";
 import { resourceLimits } from "worker_threads";
-import path from "path";
+import path, { resolve } from "path";
+import { rejects } from "assert";
 
 // Task 0: Initialize Firebase
 // Replace the following with your app's Firebase project configuration
@@ -54,7 +55,13 @@ export default function Home() {
       // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
     });*/
-    router.push("/signed-in");
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("/signed-in");
+      }, 5000);
+    }).then((res) => {
+      router.push("/signed-in");
+    });
     /*auth.onAuthStateChanged((user)=>{
       console.log(user);    //這裡會印出User的資訊
       if (user) {
